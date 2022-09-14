@@ -1,0 +1,66 @@
+body{
+    font-family: 'Spacegrotesk variablefont wght', sans-serif;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+nav li {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+a:hover{
+    color: aqua;
+}
+nav button{
+    border: 1px solid black;
+    border-radius: 30px;
+   
+    background-color: #6e61ff;
+    box-shadow: 3px 3px 0 0 #031926;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 24px;
+    line-height: 160%;
+    letter-spacing: -0.02em;
+}
+header{
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+}
+#e1{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: orangered;
+
+}
+#e2{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 20px;
+}
+header img {
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 50%;
+}
+.header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
