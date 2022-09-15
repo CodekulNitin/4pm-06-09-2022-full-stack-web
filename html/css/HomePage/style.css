@@ -26,7 +26,6 @@ a:hover{
 nav button{
     border: 1px solid black;
     border-radius: 30px;
-   
     background-color: #6e61ff;
     box-shadow: 3px 3px 0 0 #031926;
     color: #fff;
@@ -34,33 +33,80 @@ nav button{
     padding: 12px 24px;
     line-height: 160%;
     letter-spacing: -0.02em;
+    position: relative;
+
+
+
 }
 header{
-    display: flex;
-    margin-top: 100px;
+    width: 100%;
+    display: grid;
     justify-content: center;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 #e1{
     border: 1px solid black;
     padding: 10px;
     border-radius: 20px;
     background-color: orangered;
+    transform: rotate(-10deg);
+    transform-origin: 0 0 ;
+    box-shadow: 3px 3px 0 0 #031926;
 
+
+}
+.event{
+    position: relative;
+    transform: rotate(20deg);
+    transform-origin: 0 0 ;
 }
 #e2{
     border: 1px solid black;
     padding: 5px;
     border-radius: 20px;
+    font-size: 20px;
+    position: relative;
+    background-color: orangered;
+    transform: rotate(-10deg);
+    transform-origin: 0 0 ;
+
+    /* -webkit-transform: (-20deg); */
 }
 header img {
-    height: 40px;
-    width: 40px;
-    border: 1px solid black;
-    padding: 5px;
+    height: 50px;
+    width: 50px;
+    box-shadow: 3px 3px 0 0 #031926;
+
     border-radius: 50%;
 }
 .header{
     display: flex;
     align-items: center;
     gap: 10px;
+
+}
+.heading2{
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#img1{
+    position: relative;
+    left: 10px;
+}
+#img2{
+position: relative;
+}
+
+#img3{
+    position: relative;
+    right: 20px;
 }
