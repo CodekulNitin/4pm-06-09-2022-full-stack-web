@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <style>
       .container {
         display: grid;
@@ -14,13 +22,17 @@
         flex-wrap: wrap;
         margin-top: 150px;
         font-size: 30px;
-        color:white;
+        color: white;
       }
       .card1 {
         height: 300px;
         grid-column-start: 1;
         grid-column-end: 3;
         background: red;
+        transition: 0.2s;
+      }
+      .card3:hover {
+        transform: scale(1.2);
       }
       .card2 {
         height: 100px;
@@ -37,7 +49,7 @@
       }
       .card3 {
         height: 300px;
-  
+
         background: red;
       }
       .card4 {
@@ -91,13 +103,14 @@
 
         background: red;
       }
-
     </style>
   </head>
   <body>
     <div class="card2">2</div>
     <div class="container">
-      <div class="card1">1</div>
+      <div class="card1">
+        <i class="fa-solid fa-house" style="color: black"></i>
+      </div>
       <div class="card2">2</div>
       <div class="card3">3</div>
       <div class="card4">4</div>
@@ -108,21 +121,28 @@
       <div class="card9">9</div>
       <div class="card10">10</div>
       <div class="card11">11</div>
-      <div class="card12">12</div>
+      <div class="card12">
+        <img
+          src="./compass.png"
+          height="50"
+          alt=""
+          style="background-color: white"
+        />
+      </div>
       <div class="card13">
-      <marquee behavior="" direction="left">
-    <div style="display: flex; gap:10px;">
-        <h1>hello</h1>
-        <h1>hello</h1>
-        <h1>hello</h1>
-        <h1>hello</h1>
-        <h1>hello</h1>
-        <h1>hello</h1>
-        <h1>hello</h1>
-        <h1>hello</h1>
-    </div>
-      </marquee></div>
-  
+        <marquee behavior="" direction="left">
+          <div style="display: flex; gap: 10px">
+            <h1>hello</h1>
+            <h1>hello</h1>
+            <h1>hello</h1>
+            <h1>hello</h1>
+            <h1>hello</h1>
+            <h1>hello</h1>
+            <h1>hello</h1>
+            <h1>hello</h1>
+          </div>
+        </marquee>
+      </div>
     </div>
   </body>
 </html>
