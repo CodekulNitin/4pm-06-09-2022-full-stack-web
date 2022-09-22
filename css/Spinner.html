@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .ring {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border-left: 4px solid #1bc9f5;
+        border-top: 4px solid #1bc9f5;
+        animation: animate 2s linear infinite;
+      }
+      @keyframes animate {
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+      }
+      .ring:nth-child(2){
+        animation: animate2 2s linear infinite;
+        animation-delay:-1s ;
+        border-left: 4px solid #37eb26;
+        border-top: 4px solid #37eb26;
+      }
+      @keyframes animate2{
+        0%{
+            transform: rotate(360deg);
+        }
+        100%{
+            transform: rotate(0deg);
+        }
+      }
+      .ring:nth-child(3){
+        animation: animate3 2s linear infinite;
+        animation-delay:-1s ;
+        border-left: 4px solid red;
+        border-top: 4px solid red;
+      }
+      @keyframes animate3{
+        0%{
+            transform: rotate(360deg);
+        }
+        100%{
+            transform: rotate(0deg);
+        }
+      }
+      .container{
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+    </div>
+  </body>
+</html>
