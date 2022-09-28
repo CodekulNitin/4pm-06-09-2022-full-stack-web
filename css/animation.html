@@ -12,12 +12,21 @@
         background-color: aqua;
         border-radius: 10px;
         position: relative;
-        /* animation: myfirst 5s infinite; */
-        animation-direction: alternate-reverse;
+        animation: myfirst 5s 2;
+        /* animation-direction: alternate-reverse; */
       }
-      div:hover{
+      
+      @keyframes myfirst{
+        0%{background-color: red; left: 0px; top: 0px;}
+        25%{background-color: yellowgreen; left: 300px; top: 0px;}
+        50%{background-color: crimson; left: 300px; top: 300px;}
+        75%{background-color: black; left:0px; top: 300px;}
+        100%{background-color: darkgreen; left: 0px; top: 0px;}
+      }
+      /* div:hover{
         animation: rotate;
-        animation-duration: 10s;
+        animation-duration: 1s;
+        background-color: crimson;
         animation-direction: reverse;
         cursor: pointer;
       }
@@ -28,14 +37,7 @@
         100%{
             transform: rotate(360deg);
         }
-      }
-      @keyframes myfirst{
-        0%{background-color: red; left: 0px; top: 0px;}
-        25%{background-color: yellowgreen; left: 300px; top: 0px;}
-        50%{background-color: crimson; left: 300px; top: 300px;}
-        75%{background-color: black; left:0px; top: 300px;}
-        100%{background-color: darkgreen; left: 0px; top: 0px;}
-      }
+      } */
     </style>
   </head>
   <body>

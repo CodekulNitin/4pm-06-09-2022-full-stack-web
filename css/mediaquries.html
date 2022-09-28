@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+      .cards {
+        border: 2px solid red;
+        height: 300px;
+      }
+      /* mediaquires */
+      /* 767px mobile
+      768px : 1023 tab
+      1024px :1279 desktop
+      1280px : 1339px laptop
+      1340px : 1920px 4k device */
+      @media only screen and (max-width: 767px) {
+        .container {
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+          gap: 20px;
+        }
+        .cards {
+          border: 2px solid red;
+          height: 300px;
+          background-color: blueviolet;
+        }
+      }
+      @media only screen and (min-width: 768px) and (max-width:1023px) {
+        .container {
+          display: grid;
+          grid-template-columns: repeat(3,1fr);
+          gap: 20px;
+        }
+        .cards {
+          border: 2px solid red;
+          background-color: aqua;
+          height: 300px;
+        }
+      }
+      @media only screen and (min-width: 1280px) and (max-width:1440px) {
+        .container {
+          display: grid;
+          grid-template-columns: repeat(5,1fr);
+          gap: 20px;
+        }
+        .cards {
+          border: 2px solid red;
+          background-color: rgb(195, 255, 0);
+          height: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cards"></div>
+      <div class="cards"></div>
+      <div class="cards"></div>
+      <div class="cards"></div>
+      <div class="cards"></div>
+      <div class="cards"></div>
+      <div class="cards"></div>
+      <div class="cards"></div>
+      <div class="cards"></div>
+      <div class="cards"></div>
+    </div>
+  </body>
+</html>
