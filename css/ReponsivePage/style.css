@@ -32,6 +32,7 @@ nav button {
   background: linear-gradient(to right, #ffc28c, #ea60d5, #7d8dff) !important;
 }
 .header {
+  /* background: url('https://pixfort-space.sfo2.cdn.digitaloceanspaces.com/wordpress/essentials/assets/minimal-demo/minimal-intro-bg-video.mp4'); */
   margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -46,61 +47,26 @@ nav button {
   font-size: 30px;
 }
 
-.section2 {
+.section2 img{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-right: 50px;
+  width: 80%;
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* gap: 10px; */
+  margin-left: 80px;
 }
-.cards1 {
-  background-color: #7d8dff;
-  height: 200px;
-  width: auto;
-  border-radius: 10px;
-}
-.cards2 {
-  background-color: #7d8dff;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-}
-.cards3 {
-  background-color: #7d8dff;
-  height: 200px;
-  border-radius: 10px;
-}
-.cards4 {
+
+
+
+#btn2{
   background: linear-gradient(to right, #ffc28c, #ea60d5, #7d8dff) !important;
-  height: 200px;
-  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 50%;
+  font-size: 20px;
+  color: white;
 }
-.cards5 {
-  background-color: #7d8dff;
-  height: 200px;
-  border-radius: 10px;
-}
-.cards6 {
-  background-color: #7d8dff;
-  height: 200px;
-  border-radius: 10px;
-}
-.cards7 {
-  background-color: #7d8dff;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-}
-.cards8 {
-  background-color: #7d8dff;
-  height: 200px;
-  border-radius: 10px;
-}
-.cards9 {
-  background-color: #7d8dff;
-  height: 200px;
-  width: 200px;
-    border-radius: 50%;
-}
+
 /* Mobile view */
 @media only screen and (max-width: 767px) {
   nav button {
@@ -126,7 +92,7 @@ nav button {
     gap: 10px;
     margin-right: 0px;
   }
-  
+ 
 }
 /* Tab view */
 @media only screen and (min-width: 768px) and (max-width: 1279px) {
