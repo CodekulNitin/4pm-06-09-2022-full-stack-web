@@ -14,14 +14,14 @@
 
 //  console.log(happy);
 
-// const isLoggedIn = true;
-// const hasPermissions = true;
+const isLoggedIn = true;
+const hasPermissions = true;
 
-// if(isLoggedIn && hasPermissions ){
-//     console.log("your data is sucessfully deleted");
-// }else{
-//     console.log("there is no permission ");
-// }
+if(isLoggedIn && hasPermissions ){
+    console.log("your data is sucessfully deleted");
+}else{
+    console.log("there is no permission ");
+}
 // console.log("cat" && "dog");
 
 // logical  OR ||
@@ -84,22 +84,22 @@
 // console.log(new Boolean(isTrue));
 
 
-const data = [
-    {
-        id:1,
-        name:"codekul",
-        active:true
-    },
-    {
-        id:2,
-        name:"codekul",
-        active:true
-    },
-    {
-        id:3,
-        name:"codekul",
-        active:false
-    }
-]
-active === "isAction"
-active === "inActive"
+// const data = [
+//     {
+//         id:1,
+//         name:"codekul",
+//         active:true
+//     },
+//     {
+//         id:2,
+//         name:"codekul",
+//         active:true
+//     },
+//     {
+//         id:3,
+//         name:"codekul",
+//         active:false
+//     }
+// ]
+// active === "isAction"
+// active === "inActive"
