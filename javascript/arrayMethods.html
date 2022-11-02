@@ -47,32 +47,69 @@
         // console.log(data);
 
         //filter method
-        const students = [
+        const movies = [
             {
-                name: "student1",
-                marks: 60,
+                name: "Intresteller",
+                budget: 3000,
 
             },
             {
-                name: "student2",
-                marks: 35,
+                name: "social",
+                budget: 1500,
 
             },
             {
-                name: "student3",
-                marks: 25,
-
+                name: "matrix",
+                budget: 2000,
             }
         ]
-        const failed = students.filter((student)=>{
-            return student.marks < 35;
-            // if (student.marks < 35) {
-            //     return true
-            // } else {
-            //   return  false
-            // }
-        })
-        console.log(failed);
+        // const failed = students.filter((student) => {
+        //     // return student.marks < 35;
+        //     if (student.marks > 25) {
+        //         return true
+        //     } else {
+        //         return false
+        //     }
+        // })
+        // console.log(failed);
+
+        // let total = 0;
+        // movies.forEach((movie) => {
+        //     total += movie.budget
+        // })
+        // console.log(total);
+        // const total = movies.reduce((acc,movie)=>{
+        //     acc = acc + movie.budget;
+        //     return acc;
+        // },0)
+        // console.log(total);
+
+        //indexOf
+        // const admins = [2, 3, 7]
+        // const user = {
+        //     name: "admin",
+        //     id: 2
+        // }
+        // const isAdmin = admins.indexOf(user.id) > -1;
+        // console.log(isAdmin);
+        // assignment
+        const user = [
+            {
+                fName: "peter",
+                lastName: "doe"
+            },
+            {
+                fName: "john",
+                lastName: "doe"
+            },
+        ]
+        console.log(user);
+// assignment 2
+// write a code to clone an array
+// test data
+// console.log(array_clone([1,2,4,0]))
+// console.log(array_clone([1,2,[4,0]]))
+
     </script>
 </body>
 
