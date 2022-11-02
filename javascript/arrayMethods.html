@@ -1,20 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <!--Assignment Merge Two and three Arrays -->
-    <p id="demo"></p>
+    <!-- <p id="demo"></p> -->
     <script>
-        const person = ["Codekul","kothrud","123456789"]
-        const personInfo = ["Codekul","kothrud","123456789"]
-        person.unshift("hello")
-        // document.getElementById("demo").innerHTML = person.pop()
-        console.log(person);
+        // const person = ["Codekul","kothrud","123456789"]
+        // const personInfo = ["Codekul","kothrud","123456789"]
+        // person.unshift("hello")
+        // // document.getElementById("demo").innerHTML = person.pop()
+        // console.log(person);
+        // const data = [
+        //     {
+        //         name: "codekul",
+        //         marks: 1000,
+
+        //     },
+        //     {
+        //         name: "ibm",
+        //         marks: 2000,
+
+        //     },
+        //     {
+        //         name: "tcs",
+        //         marks: 2500,
+
+        //     }
+        // ]
+        // for (let i=0; i < data.length; i++){
+        //     data[i].marks = data[i].marks-200
+        // }
+        // data.forEach(element => {
+        //    data.marks = data.marks-100
+        // });
+        // console.log(element); 
+        // for (let salary of data) {
+        //     salary.marks = salary.marks - 100
+        // }
+        // console.log(data);
+
+        //filter method
+        const students = [
+            {
+                name: "student1",
+                marks: 60,
+
+            },
+            {
+                name: "student2",
+                marks: 35,
+
+            },
+            {
+                name: "student3",
+                marks: 25,
+
+            }
+        ]
+        const failed = students.filter((student)=>{
+            return student.marks < 35;
+            // if (student.marks < 35) {
+            //     return true
+            // } else {
+            //   return  false
+            // }
+        })
+        console.log(failed);
     </script>
 </body>
+
 </html>
