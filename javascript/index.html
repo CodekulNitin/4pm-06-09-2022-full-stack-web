@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <p id="demo"></p>
     <!-- Assignment -->
     <!-- Addition Of Two number
  subtraction
@@ -32,7 +33,7 @@
         Show me
     </button> -->
 
-<!-- 
+    <!-- 
     <script>
         // function myFunction(id) {
         //     document.getElementById("text").style.display = "block"
@@ -45,7 +46,15 @@
         document.write(today)
 
     </script> -->
-
+    <script>
+        function myFunction() {
+            let person = prompt("please enter your name ")
+            if (person != null) {
+                // console.log("hello how are you" + person + "how are you today");
+                document.getElementById("demo").innerHTML = "hello" + person + "how are you"
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -103,3 +103,8 @@ if(isLoggedIn && hasPermissions ){
 // ]
 // active === "isAction"
 // active === "inActive"
+
+const user1 = "super Admin";
+const user2 = "admin";
+const user3 = "Accountant";
+const user4 = "order Handler";
