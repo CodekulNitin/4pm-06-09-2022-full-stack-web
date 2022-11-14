@@ -134,9 +134,35 @@
         // const names = ["john", "jane", "shyam", "ram", "mansi", "sameer"]
         // names.sort();
         // console.log(names);
-        const user =  ["john", "jane", "shyam", "ram", "mansi", "sameer"]
-        user.splice(2,3)
-        console.log(user);
+        // const user =  ["john", "jane", "shyam", "ram", "mansi", "sameer"]
+        // user.splice(2,3)
+        // console.log(user);
+
+
+        // function rotate() {
+        //     let cal = ["jan", "feb", "mar", "apr", "may", "june", "july", "aug", "sep", "oct", "nov", "dec"]
+        //     cal = cal.concat(cal.splice(0, new Date().getMonth()))
+        //     console.log(cal)
+        // }
+        
+        const arr = [1, 2, 3, 4, 5]
+        const rotate = (arr, count = 1) => {
+            return [...arr.slice(count, arr.length), ...arr.slice(0, count)];
+        }
+        console.log(rotate(arr, 3));
+        // const array = [1,2,3,4,5,6,7,8,9]
+        // expected output [1,2,3,7,8,9]
+
+        //expected output
+        // 1234
+        // 5678
+        // 9011
+
+        // expected output
+        // 1 2 3 4 5
+        // 6       7
+        // 8       9
+        // 10 11 13 14
     </script>
 </body>
 

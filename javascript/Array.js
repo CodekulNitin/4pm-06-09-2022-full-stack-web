@@ -32,17 +32,23 @@
 // console.log(arr.name);
 // console.log(arr["name"]);
 
-let arr =["hello","codekul","kothrud"];
+// let arr =["hello","codekul","kothrud"];
 
-// console.log(arr);
-console.log(arr[1]);
+// // console.log(arr);
+// console.log(arr[1]);
 
 // assignment
-const array = [[2,3],[4,5],[6,7],[8,9]];
- for(let items of array){
-    // console.log(items);
-    for(let item2 of items){
-        console.log(item2);
-    }
- }
+// const array = [[2,3],[4,5],[6,7],[8,9]];
+//  for(let items of array){
+//     // console.log(items);
+//     for(let item2 of items){
+//         console.log(item2);
+//     }
+//  }
 // console.log([2,3,5,6,7,8]);
+
+function rotate(){
+    let cal=["jan","feb","mar","apr","may","june","july","aug","sep","oct","nov","dec"]
+    cal = cal.concat(cal.splice(0,new Date().getMonth()))
+   console.log(cal)
+}
