@@ -9,13 +9,16 @@
 </head>
 
 <body>
-    <p style="display: none;" id="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem aliquid
-        modi at ratione aut est dicta quia harum quaerat. Nihil recusandae reiciendis at inventore nobis natus debitis
-        sint praesentium nisi.</p>
-    <button onclick="msg()">
+    <input type="text" id="myText" value="">
+    <p id="demo"></p>
+    <button type="button" onclick="myFunction()">
         Click Me!
     </button>
     <script>
+        function myFunction(){
+            let x = document.getElementById("myText").value;
+            document.getElementById("demo").innerHTML=x;
+        }
         // let num = 10;
         // if (num < 10) {
         //     document.write(num + "it is smallest number");
@@ -25,12 +28,12 @@
         // }
 
 
-        function msg(p1,p2){
-            // alert("hello codekul")
-            // document.getElementById("demo").style.display="block";
-            return p1 *p2
-        }
-        console.log(msg(4,3));
+        // function msg(p1,p2){
+        //     // alert("hello codekul")
+        //     // document.getElementById("demo").style.display="block";
+        //     return p1 *p2
+        // }
+        // console.log(msg(4,3));
 
         // assignment
         // write a js program to find the area of tringle where length of three of its side are 5,6,7
