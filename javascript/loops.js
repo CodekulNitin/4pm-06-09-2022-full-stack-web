@@ -7,7 +7,7 @@
 // // assignment
 
 // // javascript program to generate a random numbers between two numbers
-// // guess random number 
+// // guess random number
 // // generate random string
 
 // //end
@@ -81,7 +81,6 @@
 // // }
 // // console.log(`the value is ${a}`);
 
-
 // //  calculte the sum of possitive numbers
 
 // // enter a number 1;
@@ -103,25 +102,27 @@
 //     // ccontinue condition
 //     if(isNaN(number)){
 //         console.log("you enterd a string");
-//         number =0; //the value of number is made 0 
+//         number =0; //the value of number is made 0
 //         continue;
 //     }
 // }
 // console.log(`the sum is ${sum}`);
 
-const arr = [5,-5,-3,-7,-9,1,2,3];
-const sumPositive = (arr = [])=>{
-const isPossitive = num=>typeof num === "number" && num >0;
-const res = arr.reduce((acc,val)=>{
-    if(isPossitive(val)){
-        acc += val ;
+const arr = [5, -5, -3, -7, -9, 1, 2, 3];
+const sumPositive = (arr = []) => {
+  const isPossitive = (num) => typeof num === "number" && num > 0;
+  const res = arr.reduce((acc, val) => {
+    if (isPossitive(val)) {
+      acc += val;
     }
     return acc;
-},0)
-return res;
+  }, 0);
+  return res;
 };
 console.log(sumPositive(arr));
 
 // Write a program that takes as input an array of numbers of length N and a number p (positions - p is greater than 0 and less than N) and a number d (direction - either 0 for left or 1 for right). The objective is to return the array shifted by p positions in d direction.
 
 //Example: For an input array [1, 3, 2, 7, 4, 6] with p=3 and d=0 the expected result would be [7, 4, 6, 1, 3, 2] with the array shifted left by 3 positions.
+
+
