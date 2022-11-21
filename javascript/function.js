@@ -4,5 +4,7 @@
 // }
 // login("jane","doe")
 // login("john")
-p1*p2
-log(3,4)
+// p1*p2
+// log(3,4)
+
+

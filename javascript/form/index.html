@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/dist/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        th,
+        tr,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="">
+        <label for="fname">Fname: </label>
+        <input style="border: 1px solid gray; margin-top:10px " type="text" id="fname">
+        <br>
+        <input style="border:1px solid black; background:red; color:white; border-radius:10px; padding:10px; margin:10px" type="button" id="submit" value="Submit">
+        <br>
+    </form>
+    <table id="table">
+        <tr>
+            <th>fname</th>
+        </tr>
+    </table>
+    <script type="text/javascript">
+            document.getElementById("submit").onclick = function () {
+            document.getElementById("table").style.display = "block";
+            let table = document.getElementById("table");
+            let row = table.insertRow(-1);
+            let fname = row.insertCell(1);
+            desc.innerHTML = document.getElementById("fname").value;
+            return false;
+        }
+    </script>
+</body>
+
+</html>

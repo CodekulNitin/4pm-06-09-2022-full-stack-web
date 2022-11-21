@@ -11,14 +11,27 @@
 <body>
     <input type="text" id="myText" value="">
     <p id="demo"></p>
-    <button type="button" onclick="myFunction()">
+    <button type="button" onclick="multiplication(4)">
         Click Me!
     </button>
     <script>
+        //function with argument
+
+        // function multiplication(number) {
+        //     alert(number * number * number);
+        // }
+
+        // function with return type
+
         function myFunction(){
-            let x = document.getElementById("myText").value;
-            document.getElementById("demo").innerHTML=x;
+            return "hello javascript"
         }
+        document.write(myFunction())
+
+        // function myFunction(){
+        //     let x = document.getElementById("myText").value;
+        //     document.getElementById("demo").innerHTML=x;
+        // }
         // let num = 10;
         // if (num < 10) {
         //     document.write(num + "it is smallest number");
