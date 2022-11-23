@@ -6,50 +6,50 @@
 
 // // assignment
 
-// // javascript program to generate a random numbers between two numbers
-// // guess random number
-// // generate random string
+// javascript program to generate a random numbers between two numbers
+// guess random number
+// generate random string
 
-// //end
+//end
 
-// // while loop
-// // let i=1;
-// // let n=5;
-// // while(i<= n){
-// //     console.log(i);
-// //     i += 1;
-// // }
+// while loop
+// let i=1;
+// let n=5;
+// while(i<= n){
+//     console.log(i);
+//     i += 1;
+// }
 
-// // break statment
-// // for(let i =1; i<=5;i++){
-// //     if( i == 2){
-// //         break
-// //     }
-// //     console.log(i);
-// // }
+// break statment
+// for(let i =1; i<=5;i++){
+//     if( i == 2){
+//         break
+//     }
+//     console.log(i);
+// }
 
-// //break statment using while loop
-// // let sum = 0,number;
-// // while(true){
-// //  let   number=parseInt(prompt("enter a number"))
-// //     //break condition
-// //     if(number<0){
-// //         break
-// //     }
-// //     sum +=number
-// // }
-// // console.log(`the sum is ${sum}`);
+//break statment using while loop
+// let sum = 0,number;
+// while(true){
+//  let   number=parseInt(prompt("enter a number"))
+//     //break condition
+//     if(number<0){
+//         break
+//     }
+//     sum +=number
+// }
+// console.log(`the sum is ${sum}`);
 
-// // nested for loop
-// // for (let i =1;  i<=3; i++){
-// //     for(let j=1; j<=3; j++){
-// //         if(i == 2 ){
-// //             break
-// //         }
+// nested for loop
+// for (let i =1;  i<=3; i++){
+//     for(let j=1; j<=3; j++){
+//         if(i == 2 ){
+//             break
+//         }
 
-// //         console.log(`i = ${i},j = ${j}`);
-// //     }
-// // }
+//         console.log(`i = ${i},j = ${j}`);
+//     }
+// }
 
 // // output
 // // i=1 j=1
@@ -126,3 +126,18 @@ console.log(sumPositive(arr));
 //Example: For an input array [1, 3, 2, 7, 4, 6] with p=3 and d=0 the expected result would be [7, 4, 6, 1, 3, 2] with the array shifted left by 3 positions.
 
 
+let n = 5;
+let string = "";
+// External loop
+for (let i = 1; i <= n; i++) {
+  // printing spaces
+  for (let j = 1; j <= n - i; j++) {
+    string += " ";
+  }
+  // printing star
+  for (let k = 0; k < 2 * i - 1; k++) {
+    string += "*";
+  }
+  string += "\n";
+}
+console.log(string);

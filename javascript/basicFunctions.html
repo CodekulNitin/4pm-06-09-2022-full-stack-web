@@ -9,12 +9,17 @@
 </head>
 
 <body>
-    <input type="text" id="myText" value="">
-    <p id="demo"></p>
-    <button type="button" onclick="multiplication(4)">
-        Click Me!
-    </button>
     <script>
+        // function login(str) {
+        //     // console.log(`${username},${password} loggin successfully`);
+        //     //  console.log(` loggin succesfull`);
+        //     // console.log(str.toUpperCase());
+        //     return str.toUpperCase();
+        // }
+        // const result = login("javascript")
+
+        // console.log(result);
+
         //function with argument
 
         // function multiplication(number) {
@@ -23,10 +28,10 @@
 
         // function with return type
 
-        function myFunction(){
-            return "hello javascript"
-        }
-        document.write(myFunction())
+        // function myFunction(){
+        //     return "hello javascript"
+        // }
+        // document.write(myFunction())
 
         // function myFunction(){
         //     let x = document.getElementById("myText").value;
@@ -51,6 +56,36 @@
         // assignment
         // write a js program to find the area of tringle where length of three of its side are 5,6,7
         // if else statement 
+
+        //program to add two numbers 
+        // declaring function
+        // function add (a,b){
+        //     return a+b;
+        // }
+        // // take a number  from the user
+        // let number1 = parseFloat(prompt("enter a first number"))
+        // let number2 = parseFloat(prompt("enter second number"))
+
+        // let result = add(number1,number2)
+        // // console.log("the sum of the result is" + result);   
+        // document.write(result)
+
+        //call back function //
+
+        // a callback function is that you can wait  for the result
+        // of previous function call and then execute another function call
+
+        function msg(name) {
+            console.log("hello world")
+            // myFunction(name)
+        }
+        function name(name) {
+            console.log("codekul");
+        }
+        // call the function
+        setTimeout(name,2000)
+        msg()
+
 
     </script>
 </body>
