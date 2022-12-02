@@ -9,46 +9,99 @@
 </head>
 
 <body>
-
-    <h1 id="name"></h1>
-    <h1 id="address"></h1>
-
-
-
+    <div class="container">
+        <h1 id="main-heading">Favourite Items</h1>
+        <ul>
+            <li class="list-items">Milk</li>
+            <li class="list-items">Tea</li>
+            <li class="list-items">Coffee</li>
+        </ul>
+    </div>
     <script>
-        const data = [
-            {
-                id: 1,
-                name: "Codekul",
-                address: "kothrud depot,pune"
-            },
-            {
-                id: 2,
-                name: "tcs",
-                address: "kharadi"
-            },
-        ]
-        let id = 2;
-        let name = "name"
-        let address = "address"
-
-        let res = data.filter((item) => {
-            return item.id == id
-        })
-
-        let resultName = res[0][name];
-        let resultAddress = res[0][address];
+        const ul = document.querySelector('ul')
+        const li = document.createElement('li')
+        ul.append(li)
+        li.innerText = "Cold-Coffee";
+        // li.classList.remove('Cold-Coffee');
 
 
-        document.getElementById("name").innerText = resultName
-        document.getElementById("address").innerText = resultAddress 
 
 
-        for(let i of data) {
-            document.write(i.name)
-            document.write(i.address)
-        }
+        // li.setAttribute('id', 'main-heading');
+        // li.removeAttribute('id');
+
+        // const title = document.querySelector("#main-heading")
+        // title.style.color = "red"
+
+        // console.log(title.getAttribute('id'));
+
     </script>
+
+    <!-- form -->
+    <!-- <form id=" form ">
+        Student Name <br>
+        <input type="text" name="sname"> <br>
+
+        Student Subject <br>
+        <input type="password" name="ssubject"> <br>
+
+        Student Roll Number <br>
+        <input type="roll_no" name="roll_number"> <br>
+        <input type="button" onclick="newFunction()" value="Reset">
+    </form>
+    <script>
+        function newFunction() {
+            let element = document.getElementById(" form ");
+            element.reset();
+        }
+    </script> -->
+
+
+
+
+    <!-- 
+    <h1 id="name"></h1>
+    <h1 id="address"></h1> -->
+
+
+
+    <!-- <script>
+        // const data = [
+        //     {
+        //         id: 1,
+        //         name: "Codekul",
+        //         address: "kothrud depot,pune"
+        //     },
+        //     {
+        //         id: 2,
+        //         name: "tcs",
+        //         address: "kharadi"
+        //     },
+        // ]
+        // let id = 2;
+        // let name = "name"
+        // let address = "address"
+
+        // let res = data.filter((item) => {
+        //     return item.id == id
+        // })
+
+        // let resultName = res[0][name];
+        // let resultAddress = res[0][address];
+
+
+        // document.getElementById("name").innerText = resultName
+        // document.getElementById("address").innerText = resultAddress
+
+
+        // for (let i of data) {
+        //     document.write(i.name)
+        //     document.write(i.address)
+        // }
+
+        
+
+    </script> -->
     <!-- <p class="paragraph1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sint, obcaecati sequi officia
         repudiandae labore voluptates iure eveniet exercitationem nam ut commodi blanditiis, nemo illum dignissimos
         molestias, error sed! Praesentium?</p>
