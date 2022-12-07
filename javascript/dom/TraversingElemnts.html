@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- get The parent Elelment -->
+    <!-- get the child element -->
+    <!--- get sibilings of an elements -->
+
+    <!-- <div id="main">
+        <p class="note">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis autem, ipsa eaque aliquam totam magnam earum
+            similique quaerat sed voluptates itaque reiciendis, velit vitae eius doloremque temporibus, corrupti
+            quisquam quibusdam!
+        </p>
+    </div>
+    <script>
+        let note = document.querySelector(".note")
+        console.log(note.parentNode);
+    </script> -->
+    <div id="menu">
+        <li class="first">home</li>
+        <li>products</li>
+        <li class="current">customer support</li>
+        <li>careers</li>
+        <li>investers</li>
+        <li>news</li>
+    </div>
+    <script>
+        // let firstChild = parentElement.firstChild
+        let content = document.getElementById("menu")
+        let firstChild = content.firstChild.nodeName
+        console.log(firstChild); 
+    </script>
+</body>
+
+</html>

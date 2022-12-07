@@ -1,7 +1,4 @@
 <!-- Curd operation table with edit,delete functionality  -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +58,6 @@
     <script>
         let selectedRow = null;
 
-
         function onFormSubmit() {
             let formData = readFormData();
             if (selectedRow == null)
@@ -73,6 +69,7 @@
 
         function readFormData() {
             let formData = {};
+            console.log(formData);
             formData["fullName"] = document.getElementById("fullName").value;
             formData["empCode"] = document.getElementById("empCode").value;
             formData["salary"] = document.getElementById("salary").value;
@@ -107,6 +104,7 @@
 
         function onEdit(td) {
             selectedRow = td.parentElement.parentElement;
+            console.log(td.parentElement.parentElement);
             document.getElementById("fullName").value = selectedRow.cells[0].innerHTML;
             document.getElementById("empCode").value = selectedRow.cells[1].innerHTML;
             document.getElementById("salary").value = selectedRow.cells[2].innerHTML;
@@ -124,6 +122,7 @@
             if (confirm('Are you sure to delete this record ?')) {
                 row = td.parentElement.parentElement;
                 document.getElementById("employeeList").deleteRow(row.rowIndex);
+                console.log(row.rowIndex);
                 resetForm();
             }
         }
