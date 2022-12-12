@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let promise = new Promise(function (resolve, reject) {
+        //     setTimeout(function () {
+        //         resolve('Promise Resolved')},4000);
+        // })
+        // async function asyncFunction() {
+        //     // wait until promise resolves
+        //     let result = await promise
+        //     console.log(result);
+        //     console.log("hello");
+        // }
+        // asyncFunction()
+
+        // async function asyncFunction(){
+        //     try{
+        //         // wait until the promise resolves
+        //         let result = await promise;
+        //         console.log(result);
+        //     }
+        //     catch(error){
+        //         console.log("error",error);
+        //     }
+        // }
+        // asyncFunction()
+        // execute when promise is resolved successfully
+        // countValue
+        //     .then(
+        //         function successValue(result) {
+        //             console.log(result);
+        //         })
+        //     .then(function successValue() {
+        //         console.log("you can call multiple function");
+        //     })
+
+        let countValue = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                reject('Promise Resolved')
+            });
+        })
+        countValue
+            .then(
+                function successValue(result) {
+                    console.log("The result is", result);
+                })
+            .catch(
+                function errorValue(result) {
+                    console.log("catch an error", result);
+                }
+            )
+            
+            // https://www.youtube.com/watch?v=pN6jk0uUrD8&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&ab_channel=AkshaySaini
+    </script>
+
+</body>
+
+</html>
