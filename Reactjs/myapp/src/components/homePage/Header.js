@@ -4,6 +4,7 @@ import img from "../assets/img.jpg";
 import women from "../assets/women.png";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import { Tooltip } from "@mui/material";
+import IncrementDecrementCounter from "./IncrementDecrementCounter";
 
 const data = {
   result: [
@@ -123,6 +124,9 @@ export default function Header() {
           <h1>Hello codekul</h1>
         </div>
       )}
+      <div>
+        {/* <IncrementDecrementCounter/> */}
+      </div>
     </div>
   );
 }
