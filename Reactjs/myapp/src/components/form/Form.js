@@ -2,6 +2,7 @@ import { Button, TextField } from "@mui/material";
 import React from "react";
 import { useForm } from "react-hook-form";
 import CommonTable from "../homePage/common/CommonTable";
+import IncrementDecrementCounter from "../homePage/IncrementDecrementCounter";
 
 const data = {
   result:[
@@ -28,7 +29,7 @@ function Form() {
   const [dataResult,setDataResult] = React.useState()
 
   const onSubmit = (data) => {
-    console.log(data);
+    console.log("form data",data);
     setDataResult(data)
     
   };
@@ -54,10 +55,13 @@ function Form() {
           </div>
         </div>
       </form>
+      <IncrementDecrementCounter
+        dataResult={dataResult}
+      />
       <>
         <CommonTable
         data={data}
-        dataResult={dataResult}
+      
         />
       </>
     </div>

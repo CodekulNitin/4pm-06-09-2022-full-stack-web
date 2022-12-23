@@ -1,13 +1,14 @@
-import { data } from "autoprefixer";
+
 import React, { useEffect, useState } from "react";
 
 function IncrementDecrementCounter(props) {
   const [count, setCount] = useState(0);
+  
   const [info, setInfo] = useState();
 
   useEffect(() => {
     document.title = ` ${count}`;
-    setInfo(props.data);
+    setInfo(props.dataResult);
   }, [props.data]);
 
   return (
