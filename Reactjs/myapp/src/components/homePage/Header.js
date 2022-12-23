@@ -5,6 +5,7 @@ import women from "../assets/women.png";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import { Tooltip } from "@mui/material";
 import IncrementDecrementCounter from "./IncrementDecrementCounter";
+import CommonTable from "./common/CommonTable";
 
 const data = {
   result: [
@@ -121,7 +122,8 @@ export default function Header() {
         </div>
       ) : (
         <div>
-          <h1>Hello codekul</h1>
+          {/* <h1>Hello codekul</h1> */}
+          <CommonTable data={data}/>
         </div>
       )}
       <div>

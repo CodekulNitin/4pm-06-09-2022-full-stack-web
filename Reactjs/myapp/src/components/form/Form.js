@@ -1,8 +1,17 @@
 import { Button, TextField } from "@mui/material";
-import { data } from "autoprefixer";
 import React from "react";
 import { useForm } from "react-hook-form";
-import IncrementDecrementCounter from "../homePage/IncrementDecrementCounter";
+import CommonTable from "../homePage/common/CommonTable";
+
+const data = {
+  result:[
+    {
+      id:1,
+      firstName:"John",
+      lastName:"doe"
+    }
+  ]
+}
 
 function Form() {
   const {
@@ -23,7 +32,7 @@ function Form() {
     setDataResult(data)
     
   };
-  console.log("hiiii",dataResult);
+
 
   return (
     <div className="mt-12 grid justify-center">
@@ -46,8 +55,9 @@ function Form() {
         </div>
       </form>
       <>
-        <IncrementDecrementCounter   
-        data={dataResult}
+        <CommonTable
+        data={data}
+        dataResult={dataResult}
         />
       </>
     </div>
