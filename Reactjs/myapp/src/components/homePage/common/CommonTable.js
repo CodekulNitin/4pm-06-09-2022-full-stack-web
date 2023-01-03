@@ -8,47 +8,71 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
 export default function CommonTable(props) {
-
-  const removeHeders = (headers, fieldToRemove) => {
-    return headers.filter((v) => {
-      return !fieldToRemove.includes(v);
-    });
-  };
-  // set rows ob to table
-  const allHeaders = Object.keys(props.data.result[0]);
-  const headers = removeHeders(allHeaders, ["id"]);
-
-
-  console.log("data is", props.data.result);
+  console.log("table result is", props);
 
   return (
     <TableContainer component={Paper}>
-      <Table  size="small" stickyHeader area-aria-label="stick table">
+      <Table size="small" stickyHeader area-aria-label="stick table">
         <TableHead>
-          <TableRow >
-            {headers.map((header, index) => (
-              <TableCell component="th" scope="row" key={index}
-              style={{background:"#f1f1f1"}} 
-              >
-               <span className="text-gray-600 font-semibold"> {header}</span>
-              </TableCell>
-            ))}
+          <TableRow>
+            <TableCell
+              component="th"
+              scope="row"
+              style={{ background: "#f1f1f1" }}
+            >
+              <span className="text-gray-600 font-semibold">First Name</span>
+            </TableCell>
+            <TableCell
+              component="th"
+              scope="row"
+              style={{ background: "#f1f1f1" }}
+            >
+              <span className="text-gray-600 font-semibold">Last Name</span>
+            </TableCell>
+            <TableCell
+              component="th"
+              scope="row"
+              style={{ background: "#f1f1f1" }}
+            >
+              <span className="text-gray-600 font-semibold">Mobile Number</span>
+            </TableCell>
+            <TableCell
+              component="th"
+              scope="row"
+              style={{ background: "#f1f1f1" }}
+            >
+              <span className="text-gray-600 font-semibold">Password</span>
+            </TableCell>
+            <TableCell
+              component="th"
+              scope="row"
+              style={{ background: "#f1f1f1" }}
+            >
+              <span className="text-gray-600 font-semibold">Address</span>
+            </TableCell>
+            <TableCell
+              component="th"
+              scope="row"
+              style={{ background: "#f1f1f1" }}
+            >
+              <span className="text-gray-600 font-semibold">PinCode</span>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.data.result.map((row, index) => {
-            return (
-              <TableRow
-                key={index}
-              
-              >
-                {headers &&
-                  headers.map((header, i) => (
-                    <TableCell key={i}>{row[header]}</TableCell>
-                  ))}
-              </TableRow>
-            );
-          })}
+          {props.data.result &&
+            props.data.result.map((row, index) => {
+              return (
+                <TableRow key={index}>
+                  <TableCell>{row.firstName}</TableCell>
+                  <TableCell>{row.lastName}</TableCell>
+                  <TableCell>{row.mobileNumber}</TableCell>
+                  <TableCell>{row.password}</TableCell>
+                  <TableCell>{row.address}</TableCell>
+                  <TableCell>{row.pinCode}</TableCell>
+                </TableRow>
+              );
+            })}
         </TableBody>
       </Table>
     </TableContainer>

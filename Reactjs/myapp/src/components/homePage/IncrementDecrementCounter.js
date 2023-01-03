@@ -3,8 +3,7 @@ import React, { useEffect, useState } from "react";
 
 function IncrementDecrementCounter(props) {
   const [count, setCount] = useState(0);
-  
-  const [info, setInfo] = useState();
+ const [info, setInfo] = useState();
 
   useEffect(() => {
     document.title = ` ${count}`;
