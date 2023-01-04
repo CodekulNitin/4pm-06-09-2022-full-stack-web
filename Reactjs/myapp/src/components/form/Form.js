@@ -13,9 +13,11 @@ const data = {
       firstName: "John",
       lastName: "doe",
       mobileNumber: "123456",
-      password: "dsf#$%",
+      confirmPassword: "dsf#$%",
       address: "codeKul,pune",
       pinCode: "424210",
+      email:"",
+      password:""
     },
   ],
 };
@@ -31,14 +33,18 @@ function Form() {
       firstName: "",
       lastName: "",
       mobileNumber: "",
-      password: "",
+      confirmPassword: "",
+      password:"",
       address: "",
       pinCode: "",
+      email:""
     },
   });
 
   const [dataResult, setDataResult] = React.useState([]);
+  const [logindata, setLoginData] = React.useState()
 
+  console.log("parrent component logindata",logindata);
   // //open and close modal
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -47,8 +53,9 @@ function Form() {
   const onSubmit = (dataObj) => {
     let orignalData = data;
     orignalData.result.push(dataObj);
-    setDataResult(orignalData);
+    setDataResult(orignalData  );
   };
+
   console.log(dataResult);
   return (
     <div className="mt-12 grid justify-center">
@@ -71,9 +78,9 @@ function Form() {
             {...register("mobileNumber")}
           />
           <TextField
-            label="Password"
-            name="password"
-            {...register("password")}
+            label="Confirm Password"
+            name="confirmPassword"
+            {...register("confirmPassword")}
           />
           <TextField label="Address" name="address" {...register("address")} />
           <TextField label="PinCode" name="pinCode" {...register("pinCode")} />
@@ -96,6 +103,7 @@ function Form() {
     <LoginModal 
     open={open}
     handleClose={handleClose}
+    setLoginData={setLoginData}
     />
     </div>
   );

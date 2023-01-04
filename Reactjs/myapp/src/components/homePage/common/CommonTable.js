@@ -41,7 +41,21 @@ export default function CommonTable(props) {
               scope="row"
               style={{ background: "#f1f1f1" }}
             >
+              <span className="text-gray-600 font-semibold">Email</span>
+            </TableCell>
+            <TableCell
+              component="th"
+              scope="row"
+              style={{ background: "#f1f1f1" }}
+            >
               <span className="text-gray-600 font-semibold">Password</span>
+            </TableCell>
+            <TableCell
+              component="th"
+              scope="row"
+              style={{ background: "#f1f1f1" }}
+            >
+              <span className="text-gray-600 font-semibold">Confirm Password</span>
             </TableCell>
             <TableCell
               component="th"
@@ -67,7 +81,11 @@ export default function CommonTable(props) {
                   <TableCell>{row.firstName}</TableCell>
                   <TableCell>{row.lastName}</TableCell>
                   <TableCell>{row.mobileNumber}</TableCell>
+                  <TableCell>{row.email}</TableCell>
+
                   <TableCell>{row.password}</TableCell>
+                  <TableCell>{row.confirmPassword}</TableCell>
+
                   <TableCell>{row.address}</TableCell>
                   <TableCell>{row.pinCode}</TableCell>
                 </TableRow>

@@ -3,8 +3,8 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers";
-import { TextField } from "@mui/material";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { FormControl, FormHelperText, TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
 
 const style = {
@@ -20,27 +20,32 @@ const style = {
 };
 
 export default function TransitionsModal(props) {
-  const validationSchema = yup.object().shape({
-    password: yup.string().required("Required"),
-    email: yup.string().email().required("Required"),
+  //yup's validation schema
+  const schema = yup.object().shape({
+    email: yup.string().email().required("must be a email"),
+    password: yup.string().min(8).max(16).required("password should not be empty"),
   });
 
+  //the object to reset the form to blank values
+  const defaultValues = {
+    email: "",
+    password: "",
+  };
   const {
-    register,
     handleSubmit,
     reset,
+    register,
     formState: { errors },
   } = useForm({
-    defaultValues: {
-      email: "",
-      password: "",
-  
-    },
-    // resolver: yupResolver(validationSchema),
+    mode: "onChange",
+    resolver: yupResolver(schema),
+    defaultValues,
   });
+
   const onSubmit = (dataObj) => {
     console.log(dataObj);
-    reset()
+    props.setLoginData(dataObj)
+    reset();
   };
   return (
     <div>
@@ -54,20 +59,36 @@ export default function TransitionsModal(props) {
           <Box sx={style}>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid gap-2">
-                <TextField
-                  type="email"
-                  name="email"
-                  size="small"
-                  label="Email"
-                  {...register("email")}
-                />
-                <TextField
-                  type="password"
-                  name="password"
-                  size="small"
-                  label="Password"
-                  {...register("password")}
-                />
+                <FormControl fullWidth sx={{ overFlowX: "hidden" }}>
+                  <TextField
+                    type="email"
+                    name="email"
+                    size="small"
+                    label="Email"
+                    {...register("email")}
+                  />
+                  <FormHelperText
+                    style={{ color: "#d32f2f" }}
+                    className="capitalize"
+                  >
+                    {errors.email?.message}
+                  </FormHelperText>
+                </FormControl>
+                <FormControl fullWidth sx={{ overFlowX: "hidden" }}>
+                  <TextField
+                    type="password"
+                    name="password"
+                    size="small"
+                    label="Password"
+                    {...register("password")}
+                  />
+                  <FormHelperText
+                    style={{ color: "#d32f2f" }}
+                    className="capitalize"
+                  >
+                    {errors.password?.message}
+                  </FormHelperText>
+                </FormControl>
                 <button
                   type="submit"
                   className="bg-blue-500 text-white rounded p-2 "
