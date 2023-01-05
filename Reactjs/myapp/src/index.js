@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Header from './components/homePage/Header';
 import Navbar from './components/homePage/Navbar';
-import Form from './components/form/Form';
+import Main from './components/form/Main';
 import IncrementDecrementCounter from './components/homePage/IncrementDecrementCounter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,7 +14,7 @@ root.render(
     {/* <App /> */}
     {/* <Navbar /> */}
     {/* <Header /> */}
-    <Form />
+    <Main />
     {/* <IncrementDecrementCounter /> */}
   </React.StrictMode>
 );
