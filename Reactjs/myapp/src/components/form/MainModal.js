@@ -7,6 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
 import CancelPresentationIcon from "@mui/icons-material/CancelPresentation";
+import CommonTable from "../homePage/common/CommonTable";
 const style = {
   position: "absolute",
   top: "50%",
@@ -18,6 +19,23 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
+const loginData = {
+  massage: "Login List",
+  result: [
+    {
+      Id: 1,
+      Gender: "John",
+      GenderName: "doe",
+      mobileNumber: "123456",
+      address: "codeKul,pune",
+      pinCode: "424210",
+      password: "2345",
+    },
+  ],
+  statusCode: "200",
+  actions: ["Edit", "Delete"],
+};
+
 
 export default function TransitionsModal(props) {
   //yup's validation schema
@@ -29,6 +47,14 @@ export default function TransitionsModal(props) {
       .max(16)
       .required("password should not be empty"),
   });
+
+  const [data, setData] = React.useState({ actions: [], result: [] });
+  const [dataResult, setDataResult] = React.useState([]);
+
+  React.useEffect(() => {
+    setData(loginData);
+    setDataResult(loginData.result);
+  }, []);
 
   //the object to reset the form to blank values
   const {
@@ -52,7 +78,7 @@ export default function TransitionsModal(props) {
     let orignalData = props.data;
     console.log("orignaldata", orignalData);
     orignalData.result.push(dataObj);
-    props.setDataResult(orignalData);
+    props.setData(orignalData);
     props.handleClose();
     reset();
   };
@@ -66,48 +92,48 @@ export default function TransitionsModal(props) {
       >
         <Fade in={props.open}>
           <Box sx={style}>
-            <a className="flex justify-end my-3 text-red-700 cursor-pointer" onClick={()=>{props.handleClose()}}>
+            <a
+              className="flex justify-end my-3 text-red-700 cursor-pointer"
+              onClick={() => {
+                props.handleClose();
+              }}
+            >
               <CancelPresentationIcon />
             </a>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid grid-cols-3 gap-2 shadow rounded border p-5">
                 <TextField
-                size="small"
-
+                  size="small"
                   label="First Name"
                   name="firstName"
                   {...register("firstName")}
                 />
                 <TextField
-                size="small"
-
+                  size="small"
                   label="Last Name"
                   name="lastName"
                   {...register("lastName")}
                 />
                 <TextField
-                size="small"
+                  size="small"
                   label="Mobile Number"
                   name="mobileNumber"
                   {...register("mobileNumber")}
                 />
                 <TextField
-                size="small"
-
+                  size="small"
                   label="Password"
                   name="password"
                   {...register("password")}
                 />
                 <TextField
-                size="small"
-
+                  size="small"
                   label="Address"
                   name="address"
                   {...register("address")}
                 />
                 <TextField
-                size="small"
-
+                  size="small"
                   label="PinCode"
                   name="pinCode"
                   {...register("pinCode")}
@@ -134,6 +160,15 @@ export default function TransitionsModal(props) {
                 </div>
               </div>
             </form>
+            <>
+              {data.result.length > 0 ? (
+                <CommonTable
+                  data={data}
+                  dataResult={dataResult}
+                  setDataResult={setDataResult}
+                />
+              ) : null}
+            </>
           </Box>
         </Fade>
       </Modal>

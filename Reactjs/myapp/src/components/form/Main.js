@@ -5,10 +5,11 @@ import { useForm } from "react-hook-form";
 import CommonTable from "../homePage/common/CommonTable";
 import MainModal from "./MainModal";
 
-const data = {
+const loginData = {
+  massage: "Login List",
   result: [
     {
-      id: 1,
+      Id: 1,
       firstName: "John",
       lastName: "doe",
       mobileNumber: "123456",
@@ -17,9 +18,12 @@ const data = {
       password: "2345",
     },
   ],
+  statusCode: "200",
+  actions: ["Edit", "Delete"],
 };
 
 function Form() {
+  const [data, setData] = React.useState({ actions: [], result: [] });
   const [dataResult, setDataResult] = React.useState([]);
 
   // //open and close modal
@@ -28,22 +32,30 @@ function Form() {
   const handleClose = () => setOpen(false);
 
   React.useEffect(() => {
-    setDataResult(data);
+    setData(loginData);
+    setDataResult(loginData.result);
   }, []);
 
-  console.log("data Result is",dataResult);
+  console.log("data Result is", dataResult);
   return (
     <div className="mt-12 grid justify-center">
       <Button onClick={handleOpen}>Open modal</Button>
 
-      <>{data.result.length > 0 ? <CommonTable data={dataResult} /> : null}</>
-
+      <>
+        {data.result.length > 0 ? (
+          <CommonTable
+            data={data}
+            dataResult={dataResult}
+            setDataResult={setDataResult}
+          />
+        ) : null}
+      </>
 
       <MainModal
         open={open}
         handleClose={handleClose}
-        data={dataResult}
-        setDataResult={setDataResult}
+        data={data}
+        setData={setData}
       />
     </div>
   );
