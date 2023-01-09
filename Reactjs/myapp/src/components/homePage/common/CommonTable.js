@@ -6,9 +6,10 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { object } from "yup";
+
 
 export default function CommonTable(props) {
+
   console.log("table result is", props);
   const [editAction, setEditAction] = React.useState(true);
   const [deleteAction, setDeleteAction] = React.useState(true);
@@ -54,8 +55,10 @@ console.log(headers);
                     <TableCell>
                       <div className="flex space-x-2">
 
-                      <div>{editAction ? <span className="text-blue-700">Edit</span> : null}</div>
-                      <div>{deleteAction ? <span className="text-red-700">Delete</span> : null}</div>
+                      <div>{editAction ? <span className="text-blue-700 cursor-pointer">Edit</span> : null}</div>
+                      <div>{deleteAction ? <span className="text-red-700 cursor-pointer" onClick={(e)=>{props.deleteRows(index,e);
+                      console.log("hiii");
+                      }}>Delete</span> : null}</div>
                       </div>
 
                     </TableCell>

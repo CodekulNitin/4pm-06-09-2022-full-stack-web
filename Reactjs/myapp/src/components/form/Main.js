@@ -10,8 +10,8 @@ const loginData = {
   result: [
     {
       Id: 1,
-      firstName: "John",
-      lastName: "doe",
+      email: "John@gmail.com",
+      fullName: "doe",
       mobileNumber: "123456",
       address: "codeKul,pune",
       pinCode: "424210",
@@ -36,17 +36,23 @@ function Form() {
     setDataResult(loginData.result);
   }, []);
 
-  console.log("data Result is", dataResult);
+  const deleteRows = (index) => {
+    const rows = [...dataResult];
+    rows.splice(index, 1);
+    setData(rows);
+    console.log("deleted rows Are", rows);
+  };
   return (
     <div className="mt-12 grid justify-center">
       <Button onClick={handleOpen}>Open modal</Button>
 
       <>
-        {data.result.length > 0 ? (
+        {data.statusCode === "200" && data.result.length > 0 ? (
           <CommonTable
             data={data}
             dataResult={dataResult}
             setDataResult={setDataResult}
+            deleteRows={deleteRows}
           />
         ) : null}
       </>

@@ -4,7 +4,7 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { TextField } from "@mui/material";
+import { Grid, TextField, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import CancelPresentationIcon from "@mui/icons-material/CancelPresentation";
 import CommonTable from "../homePage/common/CommonTable";
@@ -36,7 +36,6 @@ const loginData = {
   actions: ["Edit", "Delete"],
 };
 
-
 export default function TransitionsModal(props) {
   //yup's validation schema
   const schema = yup.object().shape({
@@ -46,6 +45,28 @@ export default function TransitionsModal(props) {
       .min(8)
       .max(16)
       .required("password should not be empty"),
+      mobileNumber: yup.number()
+      .typeError("Mobile Number must be a number")
+      .nullable()
+      .moreThan(0, "Floor area cannot be negative")
+      .transform((_, val) => (val !== "" ? Number(val) : null))
+      .required("mobile number should not be empty"),
+      fullName: yup
+      .string()
+      .min(8)
+      .max(16)
+      .required("fullName should not be empty"),
+      pinCode: yup.number()
+      .typeError("pin code must be a number")
+      .nullable()
+      .moreThan(0, "Floor area cannot be negative")
+      .transform((_, val) => (val !== "" ? Number(val) : null))
+      .required("pin code should not be empty"),
+      address: yup
+      .string()
+      .min(18)
+      .max(56)
+      .required("Address should not be empty"),
   });
 
   const [data, setData] = React.useState({ actions: [], result: [] });
@@ -63,9 +84,10 @@ export default function TransitionsModal(props) {
     reset,
     formState: { errors },
   } = useForm({
+    resolver: yupResolver(schema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
+      fullName: "",
+      email:"",
       mobileNumber: "",
       password: "",
       address: "",
@@ -102,42 +124,85 @@ export default function TransitionsModal(props) {
             </a>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid grid-cols-3 gap-2 shadow rounded border p-5">
-                <TextField
-                  size="small"
-                  label="First Name"
-                  name="firstName"
-                  {...register("firstName")}
-                />
-                <TextField
-                  size="small"
-                  label="Last Name"
-                  name="lastName"
-                  {...register("lastName")}
-                />
-                <TextField
-                  size="small"
-                  label="Mobile Number"
-                  name="mobileNumber"
-                  {...register("mobileNumber")}
-                />
-                <TextField
-                  size="small"
-                  label="Password"
-                  name="password"
-                  {...register("password")}
-                />
-                <TextField
-                  size="small"
-                  label="Address"
-                  name="address"
-                  {...register("address")}
-                />
-                <TextField
-                  size="small"
-                  label="PinCode"
-                  name="pinCode"
-                  {...register("pinCode")}
-                />
+                <div>
+                  <TextField
+                    required
+                    id="email"
+                    name="email"
+                    size="small"
+                    label="Email"
+                    fullWidth
+                    {...register("email")}
+                    error={errors.email ? true : false}
+                  />
+                  <Typography variant="inherit" color="textSecondary">
+                    {errors.email?.message}
+                  </Typography>
+                </div>
+                <div>
+                  <TextField
+                    size="small"
+                    label="Full Name"
+                    name="fullName"
+                    fullWidth
+                    {...register("fullName")}
+                  />
+                  <Typography variant="inherit" color="textSecondary" style={{color:"red"}}>
+                    {errors.fullName?.message}
+                  </Typography>
+                </div>
+                <div>
+                  <TextField
+                    size="small"
+                    label="Mobile Number"
+                    name="mobileNumber"
+                    fullWidth
+
+                    {...register("mobileNumber")}
+                  />
+                  <Typography variant="inherit" color="textSecondary">
+                    {errors.mobileNumber?.message}
+                  </Typography>
+                </div>
+                <div>
+                  <TextField
+                    size="small"
+                    label="Password"
+                    name="password"
+                    fullWidth
+
+                    {...register("password")}
+                  />
+                  <Typography variant="inherit" color="textSecondary">
+                    {errors.password?.message}
+                  </Typography>
+                </div>
+                <div>
+                  <TextField
+                    size="small"
+                    label="Address"
+                    fullWidth
+
+                    name="address"
+                    {...register("address")}
+                  />
+                  <Typography variant="inherit" color="textSecondary">
+                    {errors.address?.message}
+                  </Typography>
+                </div>
+                <div>
+                  <TextField
+                    size="small"
+                    label="PinCode"
+                    fullWidth
+
+                    name="pinCode"
+                    {...register("pinCode")}
+                  />
+                  <Typography variant="inherit" color="textSecondary">
+                    {errors.pinCode?.message}
+                  </Typography>
+                </div>
                 <div className="col-span-3 flex justify-center space-x-2">
                   <button
                     className="border border-red-700 text-red-700 rounded p-2 px-4"
