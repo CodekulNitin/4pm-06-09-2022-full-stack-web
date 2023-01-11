@@ -25,6 +25,7 @@ const loginData = {
 function Form() {
   const [data, setData] = React.useState({ actions: [], result: [] });
   const [dataResult, setDataResult] = React.useState([]);
+  const [deleteId, setDeleteId] = React.useState("");
 
   // //open and close modal
   const [open, setOpen] = React.useState(false);
@@ -38,16 +39,17 @@ function Form() {
 
   const deleteRows = (index) => {
     const rows = [...dataResult];
-    rows.splice(index, 1);
+    rows.splice(index,1);
     setData(rows);
     console.log("deleted rows Are", rows);
   };
   return (
     <div className="mt-12 grid justify-center">
       <Button onClick={handleOpen}>Open modal</Button>
-
       <>
-        {data.statusCode === "200" && data.result.length > 0 ? (
+        {data.hasOwnProperty("result") &&
+        data.statusCode === "200" &&
+        data.result.length > 0 ? (
           <CommonTable
             data={data}
             dataResult={dataResult}

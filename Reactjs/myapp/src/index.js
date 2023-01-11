@@ -3,20 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Header from './components/homePage/Header';
-import Navbar from './components/homePage/Navbar';
-import Main from './components/form/Main';
-import IncrementDecrementCounter from './components/homePage/IncrementDecrementCounter';
+import { BrowserRouter } from 'react-router-dom';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    {/* <App /> */}
-    {/* <Navbar /> */}
-    {/* <Header /> */}
-    <Main />
-    {/* <IncrementDecrementCounter /> */}
-  </React.StrictMode>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
